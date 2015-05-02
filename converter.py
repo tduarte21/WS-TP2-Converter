@@ -7,7 +7,6 @@ import grafo
 def ConvertToRDFN3 (filename, destinationFileName):
     _graph = ConjunctiveGraph()
     _graph.parse(filename, format="nt")
-    _graph.triples((None, None, None))
 
     of = open(destinationFileName, "wb")
     of.write(_graph.serialize(format="n3"))
@@ -16,7 +15,6 @@ def ConvertToRDFN3 (filename, destinationFileName):
 def ConvertToRDFXML (filename,destinationFileName):
     _graph = ConjunctiveGraph()
     _graph.parse(filename, format="nt")
-    _graph.triples((None, None, None))
 
     of = open(destinationFileName, "wb")
     of.write(_graph.serialize(format="pretty-xml"))
@@ -26,8 +24,6 @@ def ConvertToSQLLITE (filename,destinationFileName):
 
     _graph = ConjunctiveGraph()
     _graph.parse(filename, format="nt")
-    _graph.triples((None, None, None))
-
 
     sql = ConjunctiveGraph('SQLite')
     sql.open(destinationFileName, create=True)
